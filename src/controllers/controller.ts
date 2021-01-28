@@ -15,7 +15,7 @@ export async function add(req : Request, res:Response) {
     let content = JSON.parse(fs.readFileSync( 'src/data/data.json', 'utf8'));
     //add new data to json
     const returnedTarget = Object.assign(content, newReq);
-    await fs.writeFileSync('src/data/data.json', JSON.stringify(returnedTarget));
+    await fs.writeFileSync('src/data/data.json ', JSON.stringify(returnedTarget));
     //read data.json and response
     let content2 = JSON.parse(fs.readFileSync( 'src/data/data.json', 'utf8'));
     return  res.json('Data added: '+JSON.stringify(content2));
