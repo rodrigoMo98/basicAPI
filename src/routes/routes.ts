@@ -1,11 +1,12 @@
 import { Router } from "express";
-import {add, get, del} from "../controllers/controller";
+import {add, get, del, edit} from "../controllers/controller";
 
 const router = Router();
 
-router.route('/')
+router.route('/:id')
     .post(add)
-    .get(get)
-    .delete(del);
+    .delete(del)
+    .put(edit)
+    .get(get);
 
 export default router;
