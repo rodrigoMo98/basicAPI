@@ -3,11 +3,12 @@ pipeline {
         stages{
                 stage('Build') {
                         steps{
-                         sh 'npm install'
+                          echo 'build'
+                        // sh 'npm install'
                 
-                        sh 'tsc'
+                        //sh 'tsc'
                 
-                        sh 'npm publish'
+                        //sh 'npm publish'
                         }
                 }
         }
