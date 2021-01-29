@@ -5,6 +5,7 @@ pipeline {
                 stage('Build') {
                         steps{
                           echo 'build'
+                            sh 'npm cache clean --force'
                           sh 'npm install'
                 
                           //sh 'tsc'
