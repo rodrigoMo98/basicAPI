@@ -1,5 +1,4 @@
 node('ubuntu') {
-  stages {
         stage('Build') {
             steps {
                 sh 'npm install'
@@ -9,5 +8,4 @@ node('ubuntu') {
                 sh 'npm publish'
             }
         }
-    }
 }
