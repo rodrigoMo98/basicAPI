@@ -8,7 +8,7 @@ pipeline {
                           sh 'npm install'
                 
                           //sh 'tsc'
-                          sh 'npm adduser npm npm npm@npm.com'
+                          npm login --registry=http://192.168.100.20:8081/repository/basicapi/
                           echo 'npm'
                           echo 'npm'
                           echo 'npm@npm.com'
