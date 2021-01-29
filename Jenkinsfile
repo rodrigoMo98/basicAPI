@@ -15,7 +15,7 @@ pipeline {
                           //echo 'npm'
                           //echo 'npm'
                           //echo 'npm@npm.com'
-                          sh 'npm publish'
+                          //sh 'npm publish'
                         }
                 }
         }
