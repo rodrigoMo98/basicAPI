@@ -4,11 +4,11 @@ pipeline {
                 stage('Build') {
                         steps{
                           echo 'build'
-                        // sh 'npm install'
+                          sh 'npm install'
                 
-                        //sh 'tsc'
+                          sh 'tsc'
                 
-                        //sh 'npm publish'
+                          sh 'npm publish'
                         }
                 }
         }
