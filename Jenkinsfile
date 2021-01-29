@@ -7,7 +7,7 @@ pipeline {
                           echo 'build'
                           sh 'npm install'
                 
-                          sh 'tsc'
+                          //sh 'tsc'
                 
                           sh 'npm publish'
                         }
