@@ -7,7 +7,7 @@ pipeline {
                 stage('Build') {
                         steps{
                           echo 'build'
-                            sh 'npm cache clean --force'
+                          //sh 'npm cache clean --force'
                           sh 'npm install'
                           sh 'npm install -g typescript'
                           sh 'tsc'
