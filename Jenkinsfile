@@ -8,7 +8,12 @@ pipeline {
                           sh 'npm install'
                 
                           //sh 'tsc'
-                          sh 'npm adduser'
+                          sh 'npm adduser <<!
+npm
+npm
+npm@npm.com
+!
+                            '
                           echo 'npm'
                           echo 'npm'
                           echo 'npm@npm.com'
