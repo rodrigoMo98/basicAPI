@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "publishConfig": {
+    "registry": "http://192.168.100.20:8081/repository/basicapi/"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "nodemon src/index.ts --exec ts-node"
