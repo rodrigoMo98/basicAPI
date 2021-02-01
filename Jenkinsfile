@@ -24,6 +24,7 @@ pipeline {
                 echo 'Deploy'
                 sh 'pwd'
                 sh 'cd /home/deploy/projectdeploy/'
+                sh 'pwd'
                 sh 'npm install MybasicApi'
                 sh 'cd node_modules/MybasicApi'
                 sh ' node ./dist/index.js'
