@@ -17,7 +17,7 @@ pipeline {
             }
         }
         stage('Test'){
-            node('ubuntu-deploy){
+            node('ubuntu-deploy'){
                 steps{
                     sh 'npm install basicApi'
                     sh 'cd node_modules/basicApi'
