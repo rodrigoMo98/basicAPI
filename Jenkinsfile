@@ -9,7 +9,7 @@ pipeline {
                           echo 'build'
                           sh 'npm install'
                           sh 'tsc'
-                          //sh 'npm publish'
+                          sh 'npm publish'
                         }
                 }
         }
