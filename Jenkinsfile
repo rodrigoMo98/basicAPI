@@ -21,6 +21,8 @@ pipeline {
                 label 'ubuntu-deploy'
             }
             steps{
+                echo 'Deploy'
+                sh 'pwd'
                 sh 'cd /home/deploy/projectdeploy/'
                 sh 'npm install MybasicApi'
                 sh 'cd node_modules/MybasicApi'
