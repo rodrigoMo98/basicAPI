@@ -21,6 +21,7 @@ pipeline {
                 label 'ubuntu-deploy'
             }
             steps{
+                sh 'cd /home/deploy/projectdeploy/'
                 sh 'npm install MybasicApi'
                 sh 'cd node_modules/MybasicApi'
                 sh ' node ./dist/index.js'
