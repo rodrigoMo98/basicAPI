@@ -16,15 +16,15 @@ pipeline {
                 sh 'npm publish'
             }
         }
-        //stage('Test'){
-            //agent {
-             //   label 'ubuntu-deploy'
-            //}
-            //steps{
-                //sh 'npm install basicApi'
-                //sh 'cd node_modules/basicApi'
-                //sh ' node ./dist/index.js'
-            //}
-        //}
+        stage('Test'){
+            agent {
+                label 'ubuntu-deploy'
+            }
+            steps{
+                sh 'npm install MybasicApi'
+                sh 'cd node_modules/MybasicApi'
+                sh ' node ./dist/index.js'
+            }
+        }
     }
 }
