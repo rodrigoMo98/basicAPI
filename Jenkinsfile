@@ -27,7 +27,7 @@ pipeline {
                 echo 'Deploy'
                 sh 'pwd'
                 sh 'npm install MybasicApi'
-                sh ' node node_modules/MybasicApi/dist/src/index.js'
+                sh ' node node_modules/MybasicApi/dist/index.js'
             }
         }
     }
