@@ -7,7 +7,7 @@ pipeline {
             steps{
                 echo 'build'
                 sh 'npm install'
-                sh 'npm run prod'
+                sh 'npm run build'
             }
         }
         stage('Publish'){
