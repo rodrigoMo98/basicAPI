@@ -13,7 +13,7 @@ pipeline {
         stage('Publish'){
             steps{
                 echo 'Publish with npm'
-                sh 'cp .\data.json .\dist\'
+                sh 'cp ./data.json ./dist/'
                 sh 'npm publish dist'
             }
         }
