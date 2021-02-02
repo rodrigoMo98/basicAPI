@@ -37,9 +37,6 @@ module.exports = {
           }
         ],
       }),
-      new ZipPlugin({
-        filename: "bundle.zip",
-      }),
     ],
   };
   
