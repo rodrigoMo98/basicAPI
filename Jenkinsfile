@@ -31,6 +31,10 @@ pipeline {
                 sh 'npm install MybasicApi'
                 sh 'cp node_modules/MybasicApi/data.json ./'
                 sh 'node ./node_modules/MybasicApi/bundle.js'
+                 sh '''
+                RESULT_CODE=`curl -I http://localhost/.../..`
+                if [ `cat $RESULT_CODE` | grep "HTTP/2 200" ]; then echo "PASSED!"; else exit 1; fi
+              '''
             }
         }
     }
