@@ -7,7 +7,7 @@ pipeline {
             steps{
                 echo 'build'
                 sh 'npm install'
-                sh 'tsc'
+                sh 'npm run prod'
             }
         }
         stage('Publish'){
@@ -26,8 +26,8 @@ pipeline {
             steps{
                 echo 'Deploy'
                 sh 'npm install MybasicApi'
-                sh 'cd node_modules/MybasicApi'
-                sh ' node ./dist/index.js'
+                //sh 'cd node_modules/MybasicApi'
+                //sh ' node ./dist/index.js'
             }
         }
     }
