@@ -7,13 +7,14 @@ pipeline {
             steps{
                 echo 'build'
                 sh 'npm install'
-                sh 'tsc'
+                sh 'npm run build'
             }
         }
         stage('Publish'){
             steps{
                 echo 'Publish with npm'
-                sh 'npm publish'
+                sh 'cp .\data.json .\dist\'
+                sh 'npm publish dist'
             }
         }
         stage('Test'){
@@ -27,12 +28,8 @@ pipeline {
                 echo 'Deploy'
                 sh 'pwd'
                 sh 'npm install MybasicApi'
-                sh 'cp node_modules/MybasicApi/data.json ./'
-                sh 'node node_modules/MybasicApi/dist/index.js'
-                sh '''
-                RESULT_CODE=`curl -I http://localhost:3000/app/-1`
-                if [ `cat $RESULT_CODE` | grep "HTTP/2 200" ]; then echo "PASSED!"; else exit 1; fi
-              '''
+                //sh 'cp node_modules/MybasicApi/data.json ./'
+                //sh 'node node_modules/MybasicApi/dist/index.js'
             }
         }
     }
