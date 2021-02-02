@@ -28,7 +28,8 @@ pipeline {
                 sh 'pwd'
                 sh 'npm install MybasicApi'
                 sh 'cp node_modules/MybasicApi/data.json ./'
-                //sh ' node node_modules/MybasicApi/dist/index.js'
+                sh 'node node_modules/MybasicApi/dist/index.js'
+                sh '^C'
             }
         }
     }
