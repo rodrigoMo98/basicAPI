@@ -20,6 +20,9 @@ pipeline {
             agent {
                 label 'ubuntu-deploy'
             }
+            options {
+                skipDefaultCheckout true
+            }
             steps{
                 echo 'Deploy'
                 sh 'pwd'
