@@ -13,7 +13,7 @@ module.exports = {
     externals: [nodeExternals()],
     output: {
       path: path.resolve(__dirname, "dist"),
-      filename: "build/bundle.js",
+      filename: "bundle.js",
     },
     mode: NODE_ENV,
     resolve: {
