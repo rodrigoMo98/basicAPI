@@ -7,6 +7,7 @@ pipeline {
             steps{
                 echo 'build'
                 sh 'npm install'
+                sh 'chmod 777 -R node_modules/'
                 sh 'npm run build'
             }
         }
