@@ -32,7 +32,7 @@ pipeline {
             }
             steps{
                 echo 'Deploy'
-                sh 'rm ${HOME}/.npmrc'
+                sh 'rm -f ${HOME}/.npmrc'
                 sh 'touch ${HOME}/.npmrc'
                 sh 'echo ${REGISTRY_TOTAL} > ${HOME}/.npmrc'
                 sh 'echo ${REGISTRY_LINK} >> ${HOME}/.npmrc'
