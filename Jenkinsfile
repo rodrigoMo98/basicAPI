@@ -15,7 +15,7 @@ pipeline {
             steps{
                 echo 'Publish with npm'
                 sh 'cp ./data.json ./dist/'
-                sh 'npm publish dist'
+                sh 'npm publish ./dist'
             }
         }
         stage('Test'){
