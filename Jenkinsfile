@@ -4,7 +4,8 @@ pipeline {
     }
     environment {
         REGISTRY_LINK = '//192.168.100.24:8081/repository/'
-        
+        NEXUSPULL= credentials('NEXUS_PULL')
+        NEXUSPUSH= credentials('NEXUS_PUSH')
     }
     stages{
         stage('Build'){
@@ -20,7 +21,7 @@ pipeline {
                 echo 'Publish with npm'
 
                 sh 'rm -f ${HOME}/.npmrc'
-                sh 'echo ${REGISTRY_LINK}npm-private/:_authToken=${NEXUS_PUSH} > ${HOME}/.npmrc'
+                sh 'echo ${REGISTRY_LINK}npm-private/:_authToken=${NEXUSPUSH} > ${HOME}/.npmrc'
 
                 sh 'cp ./data.json ./dist/'
                 sh 'npm publish ./dist --registry=http:${REGISTRY_LINK}npm-private/'
@@ -37,7 +38,7 @@ pipeline {
                 echo 'Deploy'
 
                 sh 'rm -f ${HOME}/.npmrc'
-                sh 'echo ${REGISTRY_LINK}npm-private/:_authToken=${NEXUS_PULL} > ${HOME}/.npmrc'
+                sh 'echo ${REGISTRY_LINK}npm-private/:_authToken=${NEXUSPULL} > ${HOME}/.npmrc'
 
                 sh 'npm install MybasicApi --registry=http:${REGISTRY_LINK}npm-group/'
                 sh 'cp node_modules/MybasicApi/data.json ./'
