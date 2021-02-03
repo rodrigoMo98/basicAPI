@@ -1,7 +1,6 @@
 const copyWebpackPlugin = require('copy-webpack-plugin');
-const path = require('path');
 const nodeExternals = require('webpack-node-externals');
-const ZipPlugin = require('zip-webpack-plugin');
+const path = require('path');
 
 const {
 	NODE_ENV = 'production',
