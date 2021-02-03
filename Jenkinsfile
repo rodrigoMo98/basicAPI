@@ -4,8 +4,7 @@ pipeline {
     }
     environment {
         REGISTRY_LINK = '//192.168.100.24:8081/repository/npm-group/'
-        NEXUSPULL= credentials('NEXUS_PULL')
-        NEXUSPUSH= credentials('NEXUS_PUSH')
+        NEXUSPUSH= credentials('NEXUS_PULL')
     }
     stages{
         stage('Build'){
@@ -35,7 +34,7 @@ pipeline {
             steps{
                 echo 'Deploy'
                 sh 'rm -f ${HOME}/.npmrc'
-                sh 'echo ${REGISTRY_LINK}:_authToken=${NEXUSPULL} > ${HOME}/.npmrc'
+                sh 'echo ${REGISTRY_LINK}:_authToken=${NEXUSPUSH} > ${HOME}/.npmrc'
                 sh 'npm install MybasicApi --registry=http:${REGISTRY_LINK}'
                 sh 'cp node_modules/MybasicApi/data.json ./'
                 //sh 'node ./node_modules/MybasicApi/bundle.js'
