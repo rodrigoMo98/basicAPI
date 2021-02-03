@@ -34,9 +34,9 @@ pipeline {
                 echo 'Deploy'
                 sh 'rm ${HOME}/.npmrc'
                 sh 'touch ${HOME}/.npmrc'
-                echo $REGISTRY_TOTAL > $HOME/.npmrc
-                echo $REGISTRY_LINK > $HOME/.npmrc
-                echo $REGISTRY_AUTH > $HOME/.npmrc
+                echo ${REGISTRY_TOTAL} > $HOME/.npmrc
+                echo ${REGISTRY_LINK} > $HOME/.npmrc
+                echo ${REGISTRY_AUTH} > $HOME/.npmrc
                 sh 'npm install MybasicApi'
                 sh 'cp node_modules/MybasicApi/data.json ./'
                 //sh 'node ./node_modules/MybasicApi/bundle.js'
