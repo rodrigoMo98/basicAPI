@@ -20,7 +20,7 @@ pipeline {
                 echo 'Publish with npm'
 
                 sh 'rm -f ${HOME}/.npmrc'
-                sh 'echo ${REGISTRY_LINK}npm-private/:_authToken=${NEXUS-PUSH} > ${HOME}/.npmrc'
+                sh 'echo ${REGISTRY_LINK}npm-private/:_authToken=${NEXUS_PUSH} > ${HOME}/.npmrc'
 
                 sh 'cp ./data.json ./dist/'
                 sh 'npm publish ./dist --registry=http:${REGISTRY_LINK}npm-private/'
@@ -37,7 +37,7 @@ pipeline {
                 echo 'Deploy'
 
                 sh 'rm -f ${HOME}/.npmrc'
-                sh 'echo ${REGISTRY_LINK}npm-private/:_authToken=${NEXUS-PULL} > ${HOME}/.npmrc'
+                sh 'echo ${REGISTRY_LINK}npm-private/:_authToken=${NEXUS_PULL} > ${HOME}/.npmrc'
 
                 sh 'npm install MybasicApi --registry=http:${REGISTRY_LINK}npm-group/'
                 sh 'cp node_modules/MybasicApi/data.json ./'
