@@ -3,7 +3,7 @@ pipeline {
         label'ubuntu'
     }
     environment {
-        REGISTRY_LINK = '//192.168.100.24:8081/repository/npm-group'
+        REGISTRY_LINK = '//192.168.100.24:8081/repository/npm-group/'
         NEXUSPULL= credentials('NEXUS_PULL')
         NEXUSPUSH= credentials('NEXUS_PUSH')
     }
