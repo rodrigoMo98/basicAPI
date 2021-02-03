@@ -2,6 +2,11 @@ pipeline {
     agent {
         label'ubuntu'
     }
+    environment {
+        REGISTRY_TOTAL ='//192.168.100.24:8081/repository/npm-group/:_authToken=NpmToken.d41719f1-0c40-3773-8a09-658ac1f67259'
+        REGISTRY_LINK = 'registry=http://192.168.100.24:8081/repository/npm-group/'
+        REGISTRY_AUTH    = '_authToken=NpmToken.d41719f1-0c40-3773-8a09-658ac1f67259'
+    }
     stages{
         stage('Build'){
             steps{
@@ -27,7 +32,11 @@ pipeline {
             }
             steps{
                 echo 'Deploy'
-                sh 'pwd'
+                sh 'rm ${HOME}/.npmrc'
+                sh 'touch ${HOME}/.npmrc'
+                echo $REGISTRY_TOTAL > $HOME/.npmrc
+                echo $REGISTRY_LINK > $HOME/.npmrc
+                echo $REGISTRY_AUTH > $HOME/.npmrc
                 sh 'npm install MybasicApi'
                 sh 'cp node_modules/MybasicApi/data.json ./'
                 //sh 'node ./node_modules/MybasicApi/bundle.js'
